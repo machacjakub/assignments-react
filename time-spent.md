@@ -2,6 +2,6 @@
 
 - F2 + structure refactoring - 40min
 - B2 - 4min
-- F1 - 3min
+- F1 - 5min
 
-**Total time: 47min**
+**Total time: 49min**
