@@ -10,8 +10,10 @@ export const App = () => {
     const { data } = useQuery<IData>({ queryKey: ["todos"], queryFn: getTodoItems });
     return (
         <Layout>
-            <Header onItemAdd={() => console.warn("unimplemented")}>To Do app</Header>
-            {data?.data && <TodoItemsList items={data.data} />}
+            <div>
+                <Header onItemAdd={() => console.warn("unimplemented")}>To Do app</Header>
+                {data?.data && <TodoItemsList items={data.data} />}
+            </div>
             <Footer />
         </Layout>
     );
