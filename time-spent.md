@@ -6,5 +6,6 @@
 - F4 - 30min
 - F5 - 9min
 - F6 - 5min
+- F7 - 6min
 
-**Total time: 1h 33min**
+**Total time: 1h 39min**

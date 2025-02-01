@@ -8,6 +8,12 @@ interface IProps {
     items: ITodoItem[];
 }
 
+const sortTodoItems = (itemA: ITodoItem, itemB: ITodoItem) => {
+    if (itemA.isDone) return 1;
+    if (itemB.isDone) return -1;
+    return itemA.createdAt - itemB.createdAt;
+};
+
 export const TodoItemsList = ({ items }: IProps) => {
     const queryClient = useQueryClient();
     const { mutate: editItem } = useMutation({
@@ -27,7 +33,7 @@ export const TodoItemsList = ({ items }: IProps) => {
 
     return (
         <List>
-            {items.map(({ id, label, isDone }) => (
+            {items.sort(sortTodoItems).map(({ id, label, isDone }) => (
                 <ListItem
                     key={id}
                     label={label}
