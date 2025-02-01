@@ -12,3 +12,5 @@ export const editTodoItem = ({ id, label }: { id: number; label: string }) => ap
 
 export const toggleTodoItemDone = ({ id, isDone }: { id: number; isDone: boolean }) =>
     api.patch(`/items/${id}`, { isDone });
+
+export const deleteTodoItem = ({ id }: { id: number }) => api.delete(`/items/${id}`);
