@@ -3,6 +3,8 @@ import React from "react";
 import styled from "styled-components";
 
 import { Checkbox } from "./Checkbox";
+import { useBoolean } from "../hooks/useBoolean";
+import { Form } from "./form";
 
 const StyledDiv = styled.div`
     display: flex;
@@ -23,15 +25,22 @@ export type LiteeItemProp = {
 
 export const ListItem = (props: LiteeItemProp) => {
     const { label, isDone, onItemLabelEdit, onItemDoneToggle, onItemDelete } = props;
+    const isEditing = useBoolean(false);
+    const handleSubmit = (label: string) => {
+        isEditing.setFalse();
+        onItemLabelEdit(label);
+    };
 
-    return (
+    return isEditing.value ? (
+        <Form initialValue={label} onCancel={isEditing.setFalse} onSubmit={handleSubmit} />
+    ) : (
         <StyledDiv>
             <Checkbox checked={isDone} onCheckedChange={onItemDoneToggle} />
             <Label>{label}</Label>
-            <button>
+            <button onClick={() => onItemDelete()}>
                 <TrashIcon />
             </button>
-            <button onClick={() => onItemDelete()}>
+            <button onClick={isEditing.setTrue}>
                 <Pencil1Icon />
             </button>
         </StyledDiv>

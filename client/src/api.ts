@@ -7,3 +7,5 @@ const api = axios.create({
 });
 
 export const getTodoItems = (): Promise<IData> => api.get("/items");
+
+export const editTodoItem = ({ id, label }: { id: number; label: string }) => api.put(`/items/${id}`, { label });
