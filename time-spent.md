@@ -7,5 +7,6 @@
 - F5 - 9min
 - F6 - 5min
 - F7 - 6min
+- F8 - 8min
 
-**Total time: 1h 39min**
+**Total time: 1h 47min**

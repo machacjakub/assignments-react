@@ -5,7 +5,7 @@ import { useMutation, useQueryClient } from "@tanstack/react-query";
 import { deleteTodoItem, editTodoItem, toggleTodoItemDone } from "../api";
 
 interface IProps {
-    items: ITodoItem[];
+    items?: ITodoItem[];
 }
 
 const sortTodoItems = (itemA: ITodoItem, itemB: ITodoItem) => {
@@ -31,6 +31,9 @@ export const TodoItemsList = ({ items }: IProps) => {
         onSuccess: () => queryClient.invalidateQueries({ queryKey: ["todos"] }),
     });
 
+    if (!items) {
+        return <div>No todo items in the list</div>;
+    }
     return (
         <List>
             {items.sort(sortTodoItems).map(({ id, label, isDone }) => (
