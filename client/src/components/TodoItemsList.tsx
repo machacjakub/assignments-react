@@ -2,7 +2,7 @@ import { List } from "./List";
 import { ITodoItem } from "../types";
 import { ListItem } from "./ListItem";
 import { useMutation, useQueryClient } from "@tanstack/react-query";
-import { editTodoItem } from "../api";
+import { editTodoItem, toggleTodoItemDone } from "../api";
 
 interface IProps {
     items: ITodoItem[];
@@ -14,6 +14,10 @@ export const TodoItemsList = ({ items }: IProps) => {
         mutationFn: editTodoItem,
         onSuccess: () => queryClient.invalidateQueries({ queryKey: ["todos"] }),
     });
+    const { mutate: toggleItem } = useMutation({
+        mutationFn: toggleTodoItemDone,
+        onSuccess: () => queryClient.invalidateQueries({ queryKey: ["todos"] }),
+    });
 
     return (
         <List>
@@ -23,7 +27,7 @@ export const TodoItemsList = ({ items }: IProps) => {
                     label={label}
                     isDone={isDone}
                     onItemLabelEdit={(newLabel: string) => editItem({ id, label: newLabel })}
-                    onItemDoneToggle={null}
+                    onItemDoneToggle={(newDone: boolean) => toggleItem({ id, isDone: newDone })}
                     onItemDelete={null}
                 />
             ))}

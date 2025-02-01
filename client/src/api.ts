@@ -8,4 +8,7 @@ const api = axios.create({
 
 export const getTodoItems = (): Promise<IData> => api.get("/items");
 
-export const editTodoItem = ({ id, label }: { id: number; label: string }) => api.put(`/items/${id}`, { label });
+export const editTodoItem = ({ id, label }: { id: number; label: string }) => api.patch(`/items/${id}`, { label });
+
+export const toggleTodoItemDone = ({ id, isDone }: { id: number; isDone: boolean }) =>
+    api.patch(`/items/${id}`, { isDone });
