@@ -13,5 +13,6 @@
 - UI1 - 3min
 - UI2 - 25min
 - UI3 - 4min
+- S1 - 32min
 
-**Total time: 3h 24min**
+**Total time: 3h 56min**

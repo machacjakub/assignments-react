@@ -12,7 +12,8 @@ export const addTodoItem = ({ label }: { label: string }) => api.post(`/items/`,
 
 export const editTodoItem = ({ id, label }: { id: number; label: string }) => api.patch(`/items/${id}`, { label });
 
-export const toggleTodoItemDone = ({ id, isDone }: { id: number; isDone: boolean }) =>
-    api.patch(`/items/${id}`, { isDone });
+export const undoTodoItem = (id: number) => api.patch(`/items/${id}`, { isDone: false });
 
-export const deleteTodoItem = ({ id }: { id: number }) => api.delete(`/items/${id}`);
+export const markTodoItemAsDone = (id: number) => api.patch(`/items/${id}/done`);
+
+export const deleteTodoItem = (id: number) => api.delete(`/items/${id}`);

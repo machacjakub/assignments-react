@@ -2,7 +2,7 @@ import { List } from "./List";
 import { ITodoItem } from "../types";
 import { ListItem } from "./ListItem";
 import { useMutation, useQueryClient } from "@tanstack/react-query";
-import { deleteTodoItem, editTodoItem, toggleTodoItemDone } from "../api";
+import { deleteTodoItem, editTodoItem, markTodoItemAsDone, undoTodoItem } from "../api";
 
 interface IProps {
     items?: ITodoItem[];
@@ -21,8 +21,13 @@ export const TodoItemsList = ({ items }: IProps) => {
         onSuccess: () => queryClient.invalidateQueries({ queryKey: ["todos"] }),
     });
 
-    const { mutate: toggleItem } = useMutation({
-        mutationFn: toggleTodoItemDone,
+    const { mutate: undoItem } = useMutation({
+        mutationFn: undoTodoItem,
+        onSuccess: () => queryClient.invalidateQueries({ queryKey: ["todos"] }),
+    });
+
+    const { mutate: markAsDone } = useMutation({
+        mutationFn: markTodoItemAsDone,
         onSuccess: () => queryClient.invalidateQueries({ queryKey: ["todos"] }),
     });
 
@@ -42,8 +47,8 @@ export const TodoItemsList = ({ items }: IProps) => {
                     label={label}
                     isDone={isDone}
                     onItemLabelEdit={(newLabel: string) => editItem({ id, label: newLabel })}
-                    onItemDoneToggle={(newDone: boolean) => toggleItem({ id, isDone: newDone })}
-                    onItemDelete={() => deleteItem({ id })}
+                    onItemDoneToggle={(newDone: boolean) => (newDone ? markAsDone(id) : undoItem(id))}
+                    onItemDelete={() => deleteItem(id)}
                 />
             ))}
         </List>
