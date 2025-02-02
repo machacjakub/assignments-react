@@ -1,14 +1,23 @@
 import React, { PropsWithChildren } from "react";
-import { olive, grass, blackA } from "@radix-ui/colors";
+import { olive, grass, blue, red, blackA } from "@radix-ui/colors";
 import { ThemeProvider as ThemeProviderStyled } from "styled-components";
 
 import { GlobalStyle } from "../styles/GlobalStyle";
 
 const theme = {
     colors: {
+        ...blackA,
         ...olive,
         ...grass,
-        ...blackA,
+        success: {
+            background: grass.grass6,
+        },
+        primary: {
+            background: blue.blue6,
+        },
+        danger: {
+            background: red.red6,
+        },
     },
 };
 

@@ -5,6 +5,7 @@ import styled from "styled-components";
 import { Checkbox } from "./Checkbox";
 import { useBoolean } from "../hooks/useBoolean";
 import { Form } from "./form";
+import { Button, ButtonAppearance } from "./buttons/Button";
 
 const StyledDiv = styled.div`
     display: flex;
@@ -37,12 +38,12 @@ export const ListItem = (props: LiteeItemProp) => {
         <StyledDiv>
             <Checkbox checked={isDone} onCheckedChange={onItemDoneToggle} />
             <Label>{label}</Label>
-            <button onClick={() => onItemDelete()}>
-                <TrashIcon />
-            </button>
-            <button onClick={isEditing.setTrue}>
+            <Button onClick={isEditing.setTrue}>
                 <Pencil1Icon />
-            </button>
+            </Button>
+            <Button appearance={ButtonAppearance.Danger} onClick={() => onItemDelete()}>
+                <TrashIcon />
+            </Button>
         </StyledDiv>
     );
 };

@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import styled from "styled-components";
 
 import { Input } from "./Input";
+import { Button, ButtonAppearance } from "../buttons/Button";
 
 const FormStyled = styled.form`
     display: flex;
@@ -30,12 +31,12 @@ export const Form = (props: FormProps) => {
             }}
         >
             <Input value={inputValue} onValueChange={(value) => setInputValue(value)} />
-            <button type={"submit"}>
+            <Button type={"submit"} appearance={ButtonAppearance.Success}>
                 <CheckIcon />
-            </button>
-            <button type={"reset"}>
+            </Button>
+            <Button type={"reset"} appearance={ButtonAppearance.Danger}>
                 <Cross1Icon />
-            </button>
+            </Button>
         </FormStyled>
     );
 };
