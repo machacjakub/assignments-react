@@ -22,6 +22,7 @@ export type ListItemProps = {
 
 export const ListItem = ({ label, isDone, onItemLabelEdit, onItemDoneToggle, onItemDelete }: ListItemProps) => {
     const isEditing = useBoolean(false);
+    const isHovering = useBoolean(false);
 
     const handleSubmit = (label: string): void => {
         isEditing.setFalse();
@@ -33,19 +34,21 @@ export const ListItem = ({ label, isDone, onItemLabelEdit, onItemDoneToggle, onI
     }
 
     return (
-        <FlexWrapperWithGap>
+        <FlexWrapperWithGap onMouseOver={isHovering.setTrue} onMouseLeave={isHovering.setFalse}>
             <FlexWrapperWithGap>
                 <Checkbox checked={isDone} onCheckedChange={onItemDoneToggle} />
                 <Label>{label}</Label>
             </FlexWrapperWithGap>
-            <FlexWrapperWithGap>
-                <Button onClick={isEditing.setTrue}>
-                    <Pencil1Icon />
-                </Button>
-                <Button appearance={ButtonAppearance.Danger} onClick={onItemDelete}>
-                    <TrashIcon />
-                </Button>
-            </FlexWrapperWithGap>
+            {isHovering.value && (
+                <FlexWrapperWithGap>
+                    <Button onClick={isEditing.setTrue}>
+                        <Pencil1Icon />
+                    </Button>
+                    <Button appearance={ButtonAppearance.Danger} onClick={onItemDelete}>
+                        <TrashIcon />
+                    </Button>
+                </FlexWrapperWithGap>
+            )}
         </FlexWrapperWithGap>
     );
 };

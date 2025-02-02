@@ -12,5 +12,6 @@
 - F3 - 20min
 - UI1 - 3min
 - UI2 - 25min
+- UI3 - 4min
 
-**Total time: 3h 20min**
+**Total time: 3h 24min**
