@@ -6,6 +6,14 @@ import { AddItemToggle } from "./AddItemToggle";
 
 const FlexDiv = styled.header`
     display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    margin-bottom: 15px;
+    padding-bottom: 15px;
+
+    border-bottom: 1px solid;
+    border-color: ${(props) => props.theme.colors.olive6};
 `;
 
 type HeaderProps = {

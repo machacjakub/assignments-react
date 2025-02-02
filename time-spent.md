@@ -10,5 +10,6 @@
 - F8 - 8min
 - F9 - 45min
 - F3 - 20min
+- UI1 - 3min
 
-**Total time: 2h 52min**
+**Total time: 2h 55min**
