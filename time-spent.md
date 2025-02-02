@@ -9,5 +9,6 @@
 - F7 - 6min
 - F8 - 8min
 - F9 - 45min
+- F3 - 20min
 
-**Total time: 2h 32min**
+**Total time: 2h 52min**
