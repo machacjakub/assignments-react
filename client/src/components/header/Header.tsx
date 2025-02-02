@@ -11,6 +11,7 @@ const FlexDiv = styled.header`
 
     margin-bottom: 15px;
     padding-bottom: 15px;
+    min-height: 30px;
 
     border-bottom: 1px solid;
     border-color: ${(props) => props.theme.colors.olive6};

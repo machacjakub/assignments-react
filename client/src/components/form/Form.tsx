@@ -4,9 +4,12 @@ import styled from "styled-components";
 
 import { Input } from "./Input";
 import { Button, ButtonAppearance } from "../buttons/Button";
+import { FlexWrapperWithGap } from "../FlexWrapperWithGap";
 
 const FormStyled = styled.form`
     display: flex;
+    gap: 8px;
+    justify-content: space-between;
 `;
 
 type FormProps = {
@@ -28,12 +31,14 @@ export const Form = (props: FormProps) => {
     return (
         <FormStyled onSubmit={handleSubmit} onReset={onCancel}>
             <Input value={inputValue} onValueChange={setInputValue} />
-            <Button type={"submit"} appearance={ButtonAppearance.Success}>
-                <CheckIcon />
-            </Button>
-            <Button type={"reset"} appearance={ButtonAppearance.Danger}>
-                <Cross1Icon />
-            </Button>
+            <FlexWrapperWithGap>
+                <Button type={"submit"} appearance={ButtonAppearance.Success}>
+                    <CheckIcon />
+                </Button>
+                <Button type={"reset"} appearance={ButtonAppearance.Danger}>
+                    <Cross1Icon />
+                </Button>
+            </FlexWrapperWithGap>
         </FormStyled>
     );
 };
