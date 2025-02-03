@@ -3,6 +3,7 @@ import { ITodoItem } from "../types";
 import { ListItem } from "./ListItem";
 import { useMutation, useQueryClient } from "@tanstack/react-query";
 import { deleteTodoItem, editTodoItem, markTodoItemAsDone, undoTodoItem } from "../api";
+import { EmptyList } from "./EmptyList";
 
 interface IProps {
     items?: ITodoItem[];
@@ -36,8 +37,8 @@ export const TodoItemsList = ({ items }: IProps) => {
         onSuccess: () => queryClient.invalidateQueries({ queryKey: ["todos"] }),
     });
 
-    if (!items) {
-        return <div>No todo items in the list</div>;
+    if (!items || items.length === 0) {
+        return <EmptyList />;
     }
     return (
         <List>
