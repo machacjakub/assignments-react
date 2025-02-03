@@ -15,5 +15,6 @@
 - UI3 - 4min
 - S1 - 32min
 - r1 - 12min
+- SB1 - 5min
 
-**Total time: 4h 08min**
+**Total time: 4h 13min**
