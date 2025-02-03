@@ -1,4 +1,4 @@
-import { ButtonHTMLAttributes, PropsWithChildren } from "react";
+import { ButtonHTMLAttributes, ReactElement } from "react";
 import styled from "styled-components";
 
 const StyledButton = styled.button<{ $appearance: string }>`
@@ -10,6 +10,10 @@ const StyledButton = styled.button<{ $appearance: string }>`
     display: flex;
     justify-content: center;
     align-items: center;
+
+    &:hover {
+        background-color: ${({ theme, $appearance }) => theme.colors[$appearance].hover};
+    }
 `;
 
 export enum ButtonAppearance {
@@ -18,14 +22,15 @@ export enum ButtonAppearance {
     Danger = "danger",
 }
 
-interface IProps extends PropsWithChildren<ButtonHTMLAttributes<HTMLButtonElement>> {
+interface IProps extends ButtonHTMLAttributes<HTMLButtonElement> {
     appearance?: ButtonAppearance;
+    icon?: ReactElement;
 }
 
-export const Button = ({ children, appearance, ...props }: IProps) => {
+export const Button = ({ appearance, icon, ...props }: IProps) => {
     return (
         <StyledButton $appearance={appearance ?? ButtonAppearance.Primary} {...props}>
-            {children}
+            {icon}
         </StyledButton>
     );
 };

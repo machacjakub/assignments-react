@@ -10,13 +10,16 @@ const theme = {
         ...olive,
         ...grass,
         success: {
-            background: grass.grass6,
+            background: grass.grass7,
+            hover: grass.grass5,
         },
         primary: {
-            background: blue.blue6,
+            background: blue.blue7,
+            hover: blue.blue5,
         },
         danger: {
-            background: red.red6,
+            background: red.red7,
+            hover: red.red5,
         },
     },
 };

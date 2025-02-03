@@ -20,9 +20,5 @@ export const AddItemToggle = ({ onSubmit }: IProps) => {
         return <Form initialValue="" onSubmit={handleSubmit} onCancel={isAdding.setFalse} />;
     }
 
-    return (
-        <RoundedButton appearance={ButtonAppearance.Success} onClick={isAdding.setTrue}>
-            <PlusIcon />
-        </RoundedButton>
-    );
+    return <RoundedButton appearance={ButtonAppearance.Success} onClick={isAdding.setTrue} icon={<PlusIcon />} />;
 };

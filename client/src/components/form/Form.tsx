@@ -32,12 +32,8 @@ export const Form = (props: FormProps) => {
         <FormStyled onSubmit={handleSubmit} onReset={onCancel}>
             <Input value={inputValue} onValueChange={setInputValue} />
             <FlexWrapperWithGap>
-                <Button type={"submit"} appearance={ButtonAppearance.Success}>
-                    <CheckIcon />
-                </Button>
-                <Button type={"reset"} appearance={ButtonAppearance.Danger}>
-                    <Cross1Icon />
-                </Button>
+                <Button type={"submit"} appearance={ButtonAppearance.Success} icon={<CheckIcon />} />
+                <Button type={"reset"} appearance={ButtonAppearance.Danger} icon={<Cross1Icon />} />
             </FlexWrapperWithGap>
         </FormStyled>
     );

@@ -41,12 +41,8 @@ export const ListItem = ({ label, isDone, onItemLabelEdit, onItemDoneToggle, onI
             </FlexWrapperWithGap>
             {isHovering.value && (
                 <FlexWrapperWithGap>
-                    <Button onClick={isEditing.setTrue}>
-                        <Pencil1Icon />
-                    </Button>
-                    <Button appearance={ButtonAppearance.Danger} onClick={onItemDelete}>
-                        <TrashIcon />
-                    </Button>
+                    <Button onClick={isEditing.setTrue} icon={<Pencil1Icon />} />
+                    <Button appearance={ButtonAppearance.Danger} onClick={onItemDelete} icon={<TrashIcon />} />
                 </FlexWrapperWithGap>
             )}
         </FlexWrapperWithGap>
