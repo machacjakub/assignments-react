@@ -2,9 +2,7 @@ import { CheckIcon, Cross1Icon } from "@radix-ui/react-icons";
 import React, { FormEvent, useState } from "react";
 import styled from "styled-components";
 
-import { Input } from "./Input";
-import { Button, ButtonAppearance } from "../buttons/Button";
-import { FlexWrapperWithGap } from "../FlexWrapperWithGap";
+import { Button, ButtonAppearance, FlexWrapperWithGap, Input } from "components";
 
 const FormStyled = styled.form`
     display: flex;

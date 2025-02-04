@@ -1,6 +1,6 @@
 import { Meta, StoryObj } from "@storybook/react";
 
-import { Layout } from "../Layout";
+import { Layout } from "components";
 
 const meta = {
     title: "Layout",

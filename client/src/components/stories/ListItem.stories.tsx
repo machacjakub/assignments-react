@@ -1,6 +1,6 @@
 import { Meta, StoryObj } from "@storybook/react";
 
-import { ListItem } from "../ListItem";
+import { ListItem } from "components";
 
 const meta = {
     title: "List Item",

@@ -2,11 +2,8 @@ import { Pencil1Icon, TrashIcon } from "@radix-ui/react-icons";
 import React from "react";
 import styled from "styled-components";
 
-import { Checkbox } from "./Checkbox";
-import { useBoolean } from "../hooks/useBoolean";
-import { Form } from "./form";
-import { Button, ButtonAppearance } from "./buttons/Button";
-import { FlexWrapperWithGap } from "./FlexWrapperWithGap";
+import { Button, ButtonAppearance, Checkbox, FlexWrapperWithGap, Form } from "components";
+import { useBoolean } from "hooks";
 
 const Label = styled.label`
     margin-left: 8px;

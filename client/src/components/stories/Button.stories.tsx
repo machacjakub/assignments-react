@@ -1,5 +1,5 @@
 import { Meta, StoryObj } from "@storybook/react";
-import { Button, ButtonAppearance } from "../buttons/Button";
+import { Button, ButtonAppearance } from "components";
 import { CheckIcon, EyeClosedIcon, GearIcon, ImageIcon, PlusIcon } from "@radix-ui/react-icons";
 import { action } from "@storybook/addon-actions";
 

@@ -17,5 +17,7 @@
 - r1 - 12min
 - SB1 - 5min
 - SB2 - 35min
+- SB3 - 40min - failed
+- Final refactoring and documentation - 50min
 
-**Total time: 4h 48min**
+**Total time: 6h 18min**

@@ -1,5 +1,5 @@
 import axios from "axios";
-import { IData } from "./types";
+import { IData } from "types";
 
 const api = axios.create({
     baseURL: "http://localhost:3000",
@@ -8,7 +8,7 @@ const api = axios.create({
 
 export const getTodoItems = (): Promise<IData> => api.get("/items");
 
-export const addTodoItem = ({ label }: { label: string }) => api.post(`/items/`, { label });
+export const addTodoItem = (label: string) => api.post(`/items/`, { label });
 
 export const editTodoItem = ({ id, label }: { id: number; label: string }) => api.patch(`/items/${id}`, { label });
 

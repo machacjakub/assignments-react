@@ -1,6 +1,6 @@
-import { Container } from "./components/Container";
-import { Providers } from "./components/providers/Providers";
+import { Providers } from "./providers/Providers";
 import { App } from "./App";
+import { Container } from "components";
 
 export const RootLayout = () => (
     <Providers>

@@ -1,9 +1,7 @@
-import { List } from "./List";
-import { ITodoItem } from "../types";
-import { ListItem } from "./ListItem";
+import { ITodoItem } from "types";
 import { useMutation, useQueryClient } from "@tanstack/react-query";
-import { deleteTodoItem, editTodoItem, markTodoItemAsDone, undoTodoItem } from "../api";
-import { EmptyList } from "./EmptyList";
+import { deleteTodoItem, editTodoItem, markTodoItemAsDone, undoTodoItem } from "api";
+import { EmptyList, List, ListItem } from "components";
 
 interface IProps {
     items?: ITodoItem[];

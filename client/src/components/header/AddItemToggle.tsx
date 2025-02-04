@@ -1,8 +1,6 @@
-import { useBoolean } from "../../hooks/useBoolean";
-import { Form } from "../form";
-import { RoundedButton } from "../buttons/RoundedButton";
-import { ButtonAppearance } from "../buttons/Button";
+import { useBoolean } from "hooks";
 import { PlusIcon } from "@radix-ui/react-icons";
+import { ButtonAppearance, RoundedButton, Form } from "components";
 
 interface IProps {
     onSubmit: (label: string) => void;
@@ -20,5 +18,5 @@ export const AddItemToggle = ({ onSubmit }: IProps) => {
         return <Form initialValue="" onSubmit={handleSubmit} onCancel={isAdding.setFalse} />;
     }
 
-    return <RoundedButton appearance={ButtonAppearance.Success} onClick={isAdding.setTrue} icon={<PlusIcon />} />;
+    return <RoundedButton appearance={ButtonAppearance.Primary} onClick={isAdding.setTrue} icon={<PlusIcon />} />;
 };
